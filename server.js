@@ -61,7 +61,7 @@ io.on('connection', (socket) => {
 
     // Handle the message, generate a response using OpenAI
     try {
-      fetch('http://localhost:3000/api/chat/send', {
+      fetch('https://chatbot-henna-sigma.vercel.app/api/chat/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

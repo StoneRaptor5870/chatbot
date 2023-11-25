@@ -30,7 +30,7 @@ socket.on('receive-message', (data) => {
 
 function getHistory() {
   try {
-    fetch('http://localhost:3000/api/chat/history', {
+    fetch('https://chatbot-henna-sigma.vercel.app/api/chat/history', {
       method: 'GET',
     })
       .then((response) => response.json())

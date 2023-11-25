@@ -11,7 +11,12 @@ const routes = require('./routes');
 const app = express();
 app.enable('trust proxy');
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socketIo(server, {
+  cors: {
+    origin: 'https://chatbot-nv.netlify.app',
+    methods: ['GET', 'POST'],
+  },
+});
 
 app.use(cors());
 app.options('*', cors());

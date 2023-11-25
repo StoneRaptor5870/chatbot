@@ -46,6 +46,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+app.use('/', (req, res) => {
+  res.send('Welcome to the chatbot api.');
+});
+
 // Define routes
 app.use('/api', routes);
 

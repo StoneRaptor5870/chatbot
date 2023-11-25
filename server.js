@@ -9,9 +9,15 @@ const mongoose = require('mongoose');
 const routes = require('./routes');
 
 const app = express();
-app.use(cors());
 const server = http.createServer(app);
 const io = socketIo(server);
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',

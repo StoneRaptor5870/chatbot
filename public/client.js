@@ -1,5 +1,5 @@
 // public/client.js
-const socket = io();
+const socket = io('https://chatbot-henna-sigma.vercel.app/');
 
 // DOM elements
 const chatContainer = document.getElementById('chat-container');

@@ -1,5 +1,5 @@
 // public/client.js
-//const socket = io();
+const socket = io();
 
 // DOM elements
 const chatContainer = document.getElementById('chat-container');

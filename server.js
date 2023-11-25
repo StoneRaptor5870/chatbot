@@ -13,15 +13,6 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 app.use(cors());
-app.use((req, res, next) => {
-  res.header(
-    'Access-Control-Allow-Origin',
-    'https://chatbot-nv.netlify.app/socket.io/?EIO=4&transport=polling&t=Om7fsen',
-  );
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',

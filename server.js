@@ -9,15 +9,12 @@ const mongoose = require('mongoose');
 const routes = require('./routes');
 
 const app = express();
+app.enable('trust proxy');
 const server = http.createServer(app);
 const io = socketIo(server);
 
-const corsOptions = {
-  origin: 'https://chatbot-nv.netlify.app/',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-};
-app.use(cors(corsOptions));
+app.use(cors());
+app.options('*', cors());
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',

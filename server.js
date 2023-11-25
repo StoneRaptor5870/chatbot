@@ -13,7 +13,8 @@ app.enable('trust proxy');
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: ['https://chatbot-nv.netlify.app', 'http://localhost:3000'],
+    //origin: ['https://chatbot-nv.netlify.app', 'http://localhost:3000'],
+    origin: '*',
     methods: ['GET', 'POST'],
   },
 });

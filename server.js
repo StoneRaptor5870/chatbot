@@ -12,8 +12,12 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-app.use(cors());
-app.options('*', cors());
+const corsOptions = {
+  origin: 'https://chatbot-nv.netlify.app/',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',

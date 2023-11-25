@@ -13,6 +13,7 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 app.use(cors());
+app.options('*', cors());
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',

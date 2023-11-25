@@ -89,8 +89,4 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('User disconnected');
   });
-
-  app.use('/', (req, res) => {
-    res.send('Welcome to the chatbot api.');
-  });
 });

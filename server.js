@@ -1,6 +1,7 @@
 // server.js
 const Message = require('./models/message');
 const express = require('express');
+const cors = require('cors');
 require('dotenv').config();
 const http = require('http');
 const socketIo = require('socket.io');
@@ -8,7 +9,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes');
 
 const app = express();
-
+app.use(cors());
 const server = http.createServer(app);
 const io = socketIo(server);
 

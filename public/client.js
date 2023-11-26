@@ -29,19 +29,19 @@ socket.on('receive-message', (data) => {
 });
 
 function getHistory() {
-  console.log('hello garvit');
-  // try {
-  //   fetch('https://chatbot-henna-sigma.vercel.app/api/chat/history', {
-  //     method: 'GET',
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       // Handle the response as needed
-  //       appendMessage(data);
-  //     });
-  // } catch (error) {
-  //   console.error('Error getting response from Server:', error);
-  // }
+  try {
+    fetch('https://chatbot-henna-sigma.vercel.app/api/chat/history', {
+      method: 'GET',
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the response as needed
+        appendMessage(data);
+      });
+  } catch (error) {
+    console.error('Error getting response from Server:', error);
+    console.log('hello garvit', error);
+  }
 }
 
 // Attach event listeners

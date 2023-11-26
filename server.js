@@ -25,7 +25,6 @@ const io = socketIo(server, {
     //origin: ['https://chatbot-nv.netlify.app', 'http://localhost:3000'],
     origin: '*',
     methods: ['GET', 'POST'],
-    transports: ['websocket', 'polling'],
   },
   allowEIO3: true,
 });

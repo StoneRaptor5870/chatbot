@@ -64,7 +64,7 @@ app.get('/', (req, res) => {
 
 // Define routes
 app.use('/api', routes);
-app.get('socket.io', (req, res) => {
+app.get('/socket.io/', (req, res) => {
   res.send('true');
 });
 

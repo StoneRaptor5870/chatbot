@@ -64,6 +64,9 @@ app.get('/', (req, res) => {
 
 // Define routes
 app.use('/api', routes);
+app.get('socket.io', (req, res) => {
+  res.send('true');
+});
 
 io.on('connection', (socket) => {
   console.log('A user connected');

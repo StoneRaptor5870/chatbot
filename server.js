@@ -59,7 +59,7 @@ app.use(
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 // Define routes

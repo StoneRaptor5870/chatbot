@@ -29,6 +29,8 @@ const io = socketIo(server, {
   allowEIO3: true,
 });
 
+app.use(cors());
+
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
   process.env.DATABASE_PASSWORD,
